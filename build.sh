@@ -1,6 +1,6 @@
-
+#!/usr/bin/env bash
 set -o errexit
 
-pip install -r --no-cache-dir requirements.txt
+python -m pip install --no-cache-dir -r requirements.txt
 python manage.py collectstatic --no-input
-python manage.py migrate
+python manage.py migrate --no-input
