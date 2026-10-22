@@ -134,13 +134,16 @@ STATICFILES_DIR=[BASE_DIR/'static']
 MEDIA_URL='/media/'
 MEDIA_ROOT=BASE_DIR/'media'
 
-STORAGES={
-    "staticfiles":{
-        "BACKEND":(
-            "whitenoise.storage",
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": (
+            "whitenoise.storage."
             "CompressedManifestStaticFilesStorage"
-        )
-    }
+        ),
+    },
 }
 
 
